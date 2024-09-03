@@ -111,3 +111,5 @@ bash/log*
 *.xlsx
 output
 *.tar.*
+data
+.gitignore

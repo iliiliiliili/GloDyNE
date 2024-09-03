@@ -10,6 +10,9 @@ import datetime
 import os
 import pickle
 
+DATA_PATH = "data/as"
+OUTPUT_PATH = "data"
+
 
 def detect_exentence_file(date):
     file_location = date_2_string(date)
@@ -20,7 +23,7 @@ def date_2_string(date):#change the date format to
     month = date.month
     day = date.day
     string_date = str(year*10000 + month*100 + day)
-    string_date = 'as'+string_date+'.txt'
+    string_date = DATA_PATH + '/as'+string_date+'.txt'
     return string_date
 
 def string_2_date(date_str):
@@ -51,7 +54,7 @@ def generate_dynamic_graph(start_date = '19991009', time_step_number = 10, stop_
     remaining_graph = time_step_number
     while(remaining_graph > 0):
         if (user_chosen_date - last_available_date).days > 0:
-            print("no more file available, stop generate more file")
+            print("no more files available, stop generating")
             break
         elif detect_exentence_file(user_chosen_date) == True:
 
@@ -63,7 +66,7 @@ def generate_dynamic_graph(start_date = '19991009', time_step_number = 10, stop_
             #print(len(graph.nodes())," graph node number")
             user_chosen_date += datetime.timedelta(days=1)
         elif stop_at_irregular_interval == False:
-            print("file does not exit at ", user_chosen_date, "date skipped")
+            print("file does not exit at ", user_chosen_date, "date skipped", date_2_string(user_chosen_date))
             user_chosen_date += datetime.timedelta(days=1)
         else:
             print("file does not exit at ", user_chosen_date, "stop generate more network")
@@ -112,7 +115,7 @@ if __name__ == '__main__':
     graphs = generate_dynamic_graph(start_date='19991013', time_step_number=100, stop_at_irregular_interval=False)
 
     graphs = graphs[-22:-1]    # the last graph has some problem... ignore it!
-    save_nx_graph(nx_graph=graphs, path='AS733.pkl')
+    save_nx_graph(nx_graph=graphs, path=OUTPUT_PATH + '/AS733.pkl')
 
     for i in range(len(graphs)):
         print('@ graph', i, '# of nodes', len(graphs[i].nodes()), '# of edges', len(graphs[i].edges()))

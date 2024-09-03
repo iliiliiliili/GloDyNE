@@ -3,6 +3,8 @@ import numpy as np
 import networkx as nx  #nx2.3 is required
 import copy
 
+PATH = "data"
+
 def load_any_obj_pkl(path):
     ''' load any object from pickle file
     '''
@@ -51,4 +53,4 @@ def create_dynwalks_connected_data(path, new_file_name = 'unknown.pkl'):
 if __name__ == "__main__":
     import time
     # time.sleep(10)
-    create_dynwalks_connected_data('AS733.pkl', 'AS733_new.pkl')
+    create_dynwalks_connected_data(PATH + '/AS733.pkl', PATH + '/AS733_new.pkl')

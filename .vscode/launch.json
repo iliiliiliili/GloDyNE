@@ -5,6 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python Generate AS Second Step",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/data_preprocessing/AS733/data_output_connected_components.py",
+            "console": "integratedTerminal",
+            "args": [
+            ]
+        },
+        {
+            "name": "Python Generate AS",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/data_preprocessing/AS733/read_AS733.py",
+            "console": "integratedTerminal",
+            "args": [
+            ]
+        },
+        {
             "name": "Python Train And Eval Cora",
             "type": "debugpy",
             "request": "launch",
