@@ -191,6 +191,12 @@ def main(args):
     print(f'--- start graph/link reconstraction task --> use current emb @t to reconstruct **current** graph @t: ')
     if args.task == 'gr' or args.task == 'all':
         from libne.downstream import grClassifier, gen_test_node_wrt_changes
+
+        all_pks = {}
+
+        for k in [1, 5, 10, 20, 40, 100]:
+            all_pks[k] = []
+
         for t in range(len(G_dynamic)-1): # ignore the last one, so that the length consistent with Changed LP
             print(f'Current time step @t: {t}')
             ds_task = grClassifier(emb_dict=emb_dicts[t], rc_graph=G_dynamic[t])
@@ -203,32 +209,33 @@ def main(args):
                 print('node_list == None --> test for all nodes in a graph')
             else:
                 print('# of node_list for testing: ', len(node_list))
+            
             # --- @1 ---
             k = 1
             print(f'Graph Reconstruction by P @{k}')
-            ds_task.evaluate_precision_k(top_k=k, node_list=node_list)            # GR P@k or MeanP@k over node_list
+            all_pks[k].append(ds_task.evaluate_precision_k(top_k=k, node_list=node_list))            # GR P@k or MeanP@k over node_list
             #print(f'Graph Reconstruction by AP @{k}')
             #ds_task.evaluate_average_precision_k(top_k=k, node_list=node_list)   # GR AP@k or MeanAP@k (a.k.a. MAP@k in many papers) over node_list
             # --- @5 ---
             k = 5
             print(f'Graph Reconstruction by P @{k}')
-            ds_task.evaluate_precision_k(top_k=k, node_list=node_list)
+            all_pks[k].append(ds_task.evaluate_precision_k(top_k=k, node_list=node_list))
             # --- @10 ---
             k = 10
             print(f'Graph Reconstruction by P @{k}')
-            ds_task.evaluate_precision_k(top_k=k, node_list=node_list)
+            all_pks[k].append(ds_task.evaluate_precision_k(top_k=k, node_list=node_list))
             # --- @20 ---
             k = 20
             print(f'Graph Reconstruction by P @{k}')
-            ds_task.evaluate_precision_k(top_k=k, node_list=node_list)
+            all_pks[k].append(ds_task.evaluate_precision_k(top_k=k, node_list=node_list))
             # --- @40 ---
             k = 40
             print(f'Graph Reconstruction by P @{k}')
-            ds_task.evaluate_precision_k(top_k=k, node_list=node_list)
+            all_pks[k].append(ds_task.evaluate_precision_k(top_k=k, node_list=node_list))
             # --- @100 ---
             k = 100
             print(f'Graph Reconstruction by P @{k}')
-            ds_task.evaluate_precision_k(top_k=k, node_list=node_list)
+            all_pks[k].append(ds_task.evaluate_precision_k(top_k=k, node_list=node_list))
             # --- @1000 ---
             # Although we may be more interested in small P@K, as most networks have small average degree,
             # it is also intesting to see the algorithm performance for P@1000 (hopefully ~ 100%).
@@ -238,6 +245,11 @@ def main(args):
             #print(f'Graph Reconstruction by AP @{k}')
             #ds_task.evaluate_average_precision_k(top_k=k, node_list=node_list)
             # If OOM, try grClassifier_batch (see dowmstream.py) which is slow but requires much smaller memory 
+    
+    for k in [1, 5, 10, 20, 40, 100]:
+        print(f"Mean P@{k}")
+        print(sum(all_pks[k]) / len(all_pks[k]))
+    
     t2 = time.time()
     print(f'STEP3: end evaluating; time cost: {(t2-t1):.2f}s')
 

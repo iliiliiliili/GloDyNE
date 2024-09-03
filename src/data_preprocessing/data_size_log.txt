@@ -1,0 +1,350 @@
+===========================================================  AS733 ==========================================================
+cheng@DESKTOP-CV24TH0 MINGW64 /d/GloDyNE/___Chengbin_DynWalks/R1_TKDE/data/R0_rawdata_code
+$ python test_snapshots_size.py
+snapshot @  0
+# of nodes  1476
+# of edges  3132
+snapshot @  1
+# of nodes  2071
+# of edges  4233
+snapshot @  2
+# of nodes  2086
+# of edges  4283
+snapshot @  3
+# of nodes  2062
+# of edges  4233
+snapshot @  4
+# of nodes  2090
+# of edges  4289
+snapshot @  5
+# of nodes  2070
+# of edges  4240
+snapshot @  6
+# of nodes  2073
+# of edges  4241
+snapshot @  7
+# of nodes  2102
+# of edges  4307
+snapshot @  8
+# of nodes  2067
+# of edges  4218
+snapshot @  9
+# of nodes  2080
+# of edges  4271
+snapshot @  10
+# of nodes  2095
+# of edges  4291
+snapshot @  11
+# of nodes  2083
+# of edges  4263
+snapshot @  12
+# of nodes  2058
+# of edges  4227
+snapshot @  13
+# of nodes  2063
+# of edges  4233
+snapshot @  14
+# of nodes  2092
+# of edges  4285
+snapshot @  15
+# of nodes  2089
+# of edges  4270
+snapshot @  16
+# of nodes  2122
+# of edges  4334
+snapshot @  17
+# of nodes  2120
+# of edges  4314
+snapshot @  18
+# of nodes  2132
+# of edges  4347
+snapshot @  19
+# of nodes  2107
+# of edges  4303
+snapshot @  20
+# of nodes  3570
+# of edges  7033
+
+
+===========================================================  Elec ==========================================================
+cheng@DESKTOP-CV24TH0 MINGW64 /d/GloDyNE/___Chengbin_DynWalks/R1_TKDE/data/R0_rawdata_code
+$ python test_snapshots_size.py
+snapshot @  0
+# of nodes  6968
+# of edges  98947
+snapshot @  1
+# of nodes  6972
+# of edges  99006
+snapshot @  2
+# of nodes  6979
+# of edges  99139
+snapshot @  3
+# of nodes  6988
+# of edges  99213
+snapshot @  4
+# of nodes  6992
+# of edges  99281
+snapshot @  5
+# of nodes  6997
+# of edges  99336
+snapshot @  6
+# of nodes  6999
+# of edges  99419
+snapshot @  7
+# of nodes  7002
+# of edges  99501
+snapshot @  8
+# of nodes  7006
+# of edges  99537
+snapshot @  9
+# of nodes  7011
+# of edges  99593
+snapshot @  10
+# of nodes  7013
+# of edges  99636
+snapshot @  11
+# of nodes  7016
+# of edges  99679
+snapshot @  12
+# of nodes  7024
+# of edges  99760
+snapshot @  13
+# of nodes  7026
+# of edges  99886
+snapshot @  14
+# of nodes  7028
+# of edges  99989
+snapshot @  15
+# of nodes  7031
+# of edges  100037
+snapshot @  16
+# of nodes  7035
+# of edges  100108
+snapshot @  17
+# of nodes  7038
+# of edges  100199
+snapshot @  18
+# of nodes  7045
+# of edges  100293
+snapshot @  19
+# of nodes  7051
+# of edges  100391
+snapshot @  20
+# of nodes  7058
+# of edges  100521
+
+
+
+===========================================================  HepPh ==========================================================
+cheng@DESKTOP-CV24TH0 MINGW64 /d/GloDyNE/___Chengbin_DynWalks/R1_TKDE/data/R0_rawdata_code
+$ python test_snapshots_size.py
+snapshot @  0
+# of nodes  16729
+# of edges  1170677
+snapshot @  1
+# of nodes  16732
+# of edges  1170738
+snapshot @  2
+# of nodes  16734
+# of edges  1170789
+snapshot @  3
+# of nodes  16743
+# of edges  1171554
+snapshot @  4
+# of nodes  16753
+# of edges  1172522
+snapshot @  5
+# of nodes  16792
+# of edges  1183838
+snapshot @  6
+# of nodes  16805
+# of edges  1184376
+snapshot @  7
+# of nodes  16817
+# of edges  1185825
+snapshot @  8
+# of nodes  16818
+# of edges  1185849
+snapshot @  9
+# of nodes  16818
+# of edges  1185850
+snapshot @  10
+# of nodes  16834
+# of edges  1187095
+snapshot @  11
+# of nodes  16844
+# of edges  1188071
+snapshot @  12
+# of nodes  16866
+# of edges  1190075
+snapshot @  13
+# of nodes  16880
+# of edges  1191336
+snapshot @  14
+# of nodes  16888
+# of edges  1191882
+snapshot @  15
+# of nodes  16888
+# of edges  1191883
+snapshot @  16
+# of nodes  16889
+# of edges  1191911
+snapshot @  17
+# of nodes  16895
+# of edges  1192441
+snapshot @  18
+# of nodes  16906
+# of edges  1193446
+snapshot @  19
+# of nodes  16906
+# of edges  1193626
+snapshot @  20
+# of nodes  16910
+# of edges  1194275
+
+
+===========================================================  FBW ==========================================================
+cheng@DESKTOP-CV24TH0 MINGW64 /d/GloDyNE/___Chengbin_DynWalks/R1_TKDE/data/R0_rawdata_code
+$ python test_snapshots_size.py
+snapshot @  0
+# of nodes  41603
+# of edges  169427
+snapshot @  1
+# of nodes  41730
+# of edges  169918
+snapshot @  2
+# of nodes  41891
+# of edges  170509
+snapshot @  3
+# of nodes  42013
+# of edges  171066
+snapshot @  4
+# of nodes  42121
+# of edges  171621
+snapshot @  5
+# of nodes  42286
+# of edges  172328
+snapshot @  6
+# of nodes  42435
+# of edges  173109
+snapshot @  7
+# of nodes  42565
+# of edges  173856
+snapshot @  8
+# of nodes  42691
+# of edges  174567
+snapshot @  9
+# of nodes  42789
+# of edges  175239
+snapshot @  10
+# of nodes  42879
+# of edges  175783
+snapshot @  11
+# of nodes  42966
+# of edges  176331
+snapshot @  12
+# of nodes  43080
+# of edges  176982
+snapshot @  13
+# of nodes  43201
+# of edges  177688
+snapshot @  14
+# of nodes  43337
+# of edges  178387
+snapshot @  15
+# of nodes  43439
+# of edges  179049
+snapshot @  16
+# of nodes  43546
+# of edges  179709
+snapshot @  17
+# of nodes  43625
+# of edges  180242
+snapshot @  18
+# of nodes  43686
+# of edges  180716
+snapshot @  19
+# of nodes  43789
+# of edges  181332
+snapshot @  20
+# of nodes  43889
+# of edges  181974
+
+===========================================================  Cora ==========================================================
+(OpenANE)
+cheng@DESKTOP-CV24TH0 MINGW64 /d/GloDyNE/___Chengbin_DynWalks/R1_TKDE/data/_data_final/R0_data
+$ python test_snapshots_size.py
+snapshot @  0
+# of nodes  348
+# of edges  481
+snapshot @  1
+# of nodes  680
+# of edges  1032
+snapshot @  2
+# of nodes  1218
+# of edges  2079
+snapshot @  3
+# of nodes  2054
+# of edges  4050
+snapshot @  4
+# of nodes  3581
+# of edges  8000
+snapshot @  5
+# of nodes  5471
+# of edges  14270
+snapshot @  6
+# of nodes  7496
+# of edges  22274
+snapshot @  7
+# of nodes  9615
+# of edges  31796
+snapshot @  8
+# of nodes  11299
+# of edges  40764
+snapshot @  9
+# of nodes  12017
+# of edges  45365
+snapshot @  10
+# of nodes  12022
+# of edges  45421
+
+===========================================================  DBLP old ==========================================================
+(OpenANE)
+cheng@DESKTOP-CV24TH0 MINGW64 /d/GloDyNE/___Chengbin_DynWalks/R1_TKDE/data/_data_final/R0_data
+$ python test_snapshots_size.py
+snapshot @  0
+# of nodes  391
+# of edges  848
+snapshot @  1
+# of nodes  589
+# of edges  1252
+snapshot @  2
+# of nodes  1205
+# of edges  2557
+snapshot @  3
+# of nodes  1891
+# of edges  3887
+snapshot @  4
+# of nodes  2728
+# of edges  6030
+snapshot @  5
+# of nodes  3926
+# of edges  8515
+snapshot @  6
+# of nodes  5312
+# of edges  11201
+snapshot @  7
+# of nodes  7945
+# of edges  16739
+snapshot @  8
+# of nodes  10687
+# of edges  22895
+snapshot @  9
+# of nodes  14553
+# of edges  32226
+snapshot @  10
+# of nodes  19193
+# of edges  42523
+snapshot @  11
+# of nodes  24157
+# of edges  53431

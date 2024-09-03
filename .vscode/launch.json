@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Train And Eval Cora",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--method=DynWalks",
+                "--task=gr",
+                "--graph=data/all/Cora_new.pkl",
+                "--label=data/all/Cora_label.pkl",
+                "--emb-file=output/Cora_DynWalks_all.pkl",
+                "--num-walks=10",
+                "--walk-length=80",
+                "--window=10",
+                "--limit=0.1",
+                "--scheme=4",
+                "--seed=2019",
+                "--emb-dim=128",
+                "--workers=32",
+            ]
+        },
+        {
+            "name": "Python Train And Eval AS",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--method=DynWalks",
+                "--task=gr",
+                "--graph=data/all/AS733_new.pkl",
+                "--label=data/all/AS733_label.pkl",
+                "--emb-file=output/AS733_DynWalks_all.pkl",
+                "--num-walks=10",
+                "--walk-length=80",
+                "--window=10",
+                "--limit=0.1",
+                "--scheme=4",
+                "--seed=2019",
+                "--emb-dim=128",
+                "--workers=32",
+            ]
+        },
+    ]
+}
