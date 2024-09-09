@@ -138,6 +138,7 @@ class lpClassifier(object):
         else:
             auc = auc_score(y_true=Y_true, y_score=Y_probs)
         print("cos sim; auc=", "{:.9f}".format(auc))
+        return auc
 
 def gen_test_edge_wrt_changes(graph_t0, graph_t1, seed=None):
     ''' input: two networkx graphs

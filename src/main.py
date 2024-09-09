@@ -123,8 +123,10 @@ def main(args):
 
     # Link Prediction (LP)
     print(f'--- start link prediction task --> use current emb @t to predict **future** changed links @t+1 ...: ')
-    if args.task == 'lp_changed' or args.task == 'all':   # the size of LP testing data depends on the changes between two consecutive snapshots
+    if args.task == 'lp' or args.task == 'all':   # the size of LP testing data depends on the changes between two consecutive snapshots
         from libne.downstream import lpClassifier, gen_test_edge_wrt_changes
+
+        all_auc = []
         for t in range(len(G_dynamic)-1):
             print(f'Current time step @t: {t}')
             print(f'Changed Link Prediction task (via cos sim) by AUC score')
@@ -132,8 +134,14 @@ def main(args):
             test_edges = [e[:2] for e in pos_edges_with_label] + [e[:2] for e in neg_edges_with_label]
             test_label = [e[2] for e in pos_edges_with_label] + [e[2] for e in neg_edges_with_label]
             ds_task = lpClassifier(emb_dict=emb_dicts[t])     
-            ds_task.evaluate_auc(test_edges, test_label)
-    
+            all_auc.append(ds_task.evaluate_auc(test_edges, test_label))
+
+        mean_auc = sum(all_auc) / len(all_auc)
+        print(f"Mean AUC: {mean_auc}")
+
+        
+
+
     # Node Classification (NC)
     print(f'--- start node classification task 0.5 --> use current emb @t to infer **current* corresponding label @t...: ')
     if args.task == 'nc' or args.task == 'all':
@@ -246,9 +254,9 @@ def main(args):
             #ds_task.evaluate_average_precision_k(top_k=k, node_list=node_list)
             # If OOM, try grClassifier_batch (see dowmstream.py) which is slow but requires much smaller memory 
     
-    for k in [1, 5, 10, 20, 40, 100]:
-        print(f"Mean P@{k}")
-        print(sum(all_pks[k]) / len(all_pks[k]))
+        for k in [1, 5, 10, 20, 40, 100]:
+            print(f"Mean P@{k}")
+            print(sum(all_pks[k]) / len(all_pks[k]))
     
     t2 = time.time()
     print(f'STEP3: end evaluating; time cost: {(t2-t1):.2f}s')

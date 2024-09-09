@@ -3,7 +3,7 @@ import numpy as np
 import networkx as nx  #nx2.3 is required
 import copy
 
-PATH = "data"
+PATH = "data/insider-network"
 
 def load_any_obj_pkl(path):
     ''' load any object from pickle file
@@ -42,8 +42,8 @@ def create_dynwalks_connected_data(path, new_file_name = 'unknown.pkl'):
                 #break
         
     for i in range(len(new_dynamic_networks)):
-        print('new:',len(list(new_dynamic_networks[i].nodes())), '   old:',len(list(original_dynamic_networks[i].nodes())))
-        print('edge:',len(list(new_dynamic_networks[i].edges())), '   edge:',len(list(original_dynamic_networks[i].edges())))
+        print('new:',len(list(new_dynamic_networks[i].nodes())), '   old:',len(list(original_dynamic_networks[i].nodes() if i < len(original_dynamic_networks) else [])))
+        print('edge:',len(list(new_dynamic_networks[i].edges())), '   edge:',len(list(original_dynamic_networks[i].edges() if i < len(original_dynamic_networks) else [])))
 
     save_any_obj_pkl(new_dynamic_networks, new_file_name)
     
@@ -53,4 +53,4 @@ def create_dynwalks_connected_data(path, new_file_name = 'unknown.pkl'):
 if __name__ == "__main__":
     import time
     # time.sleep(10)
-    create_dynwalks_connected_data(PATH + '/AS733.pkl', PATH + '/AS733_new.pkl')
+    create_dynwalks_connected_data(PATH + '.pkl', PATH + '_connected_components.pkl')
